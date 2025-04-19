@@ -723,9 +723,5 @@
     "link": "projects/you-are-bezos/index.html",
     "imgSrc": "projects/you-are-bezos/img/banner.png",
     "title": "You Are Jeff Bezos"
-  }  {
-    "link": "projects/chess/chess.html",
-    "imgSrc": "projects/chess/img/chess.img",
-    "title": "Chess"
-  }
+  } 
 ]
