@@ -12,72 +12,124 @@
     <link rel="icon" href="/favicon.ico" />
     <link rel="shortcut-icon" href="/favicon.ico" />
     <script src="/js/main.js"></script>
-    <style>
-      p {
-        text-align: center;
-        max-width: 600px;
-        margin: 20px auto;
-      }
-      button {
-        cursor: pointer;
-        background-color: #012;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 20px;
-        margin-top: 20px;
-      }
-      .game-link {
-        height: 400px;
-        width: 300px;
-        text-decoration: none;
-      }
-      .game-tile {
-        background-color: #fff;
-        height: 400px;
-        width: 300px;
-        border-radius: 30px;
-      }
-      .game-icon {
-        border-radius: 30px;
-        width: 300px;
-        height: 300px;
-      }
-      .game-title {
-        font-size: 30px;
-        font-weight: bold;
-        color: #000000;
-        text-align: center;
-        margin: auto;
-      }
-      .flex-container {
-        display: flex;
-        flex-direction: row;
-        order: 0;
-        flex-grow: 0;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-      }
-      .container {
-        padding: 10px;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
+<style>
+  body {
+    background-color: #012;
+    color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #034;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 14px;
+    margin-top: 20px;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background-color: #056;
+  }
+
+  .game-link {
+    height: 240px;
+    width: 200px;
+    text-decoration: none;
+  }
+
+  .game-tile {
+    background-color: #111a;
+    height: 240px;
+    width: 200px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+
+  .game-tile:hover {
+    transform: scale(1.03);
+  }
+
+  .game-icon {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid #012;
+  }
+
+  .game-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 1px 1px #000;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  #loader {
+    display: block;
+    border: 10px solid #012;
+    border-top: 10px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 0.3s linear infinite;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #search {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: auto;
+    border-radius: 30px;
+    max-width: 600px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+  }
+</style>
+
+   
   </head>
   <body style="background-color: #012; color: #ffffff; font-family: sans-serif; text-decoration: none; text-align: center;">
-    <h1 style="font-size: 3em; text-align: center;">SPIRES</h1>
+    <h1 style="font-size: 3em; text-align: center;">SPIRES</h1>  <p class="text-center">
+      <a href="/index.html" style="text-decoration: none;">
+        <button style="cursor: pointer; background-color: #012; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 5px;">
+          Go to homepage
+        </button>
+      </a>
+    </p>
     <input type="text" id="search" onkeyup="searchGames()" placeholder="Search for spires..." style="width: 100%; font-size: 18px; padding: 6px 20px; margin: auto; border-radius: 30px; max-width: 600px; margin-bottom: 10px;" />
     <div id="loader" style="display: block; border: 16px solid #012; border-top: 16px solid #fff; border-radius: 50%; width: 120px; height: 120px; animation: spin 0.3s linear infinite; margin: auto; margin-top: 1rem;"></div>
     <div id="game-container" class="flex-container"></div>
